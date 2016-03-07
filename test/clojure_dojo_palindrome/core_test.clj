@@ -2,6 +2,5 @@
   (:require [clojure.test :refer :all]
             [clojure-dojo-palindrome.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest test-normalize-string
+  (is (= (normalize "ASDfgh123") "asdfgh123")))
