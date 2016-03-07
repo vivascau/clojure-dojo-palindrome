@@ -9,6 +9,10 @@
   [s]
   (= (seq s) (reverse s)))
 
+(defn filter-palindrome [lines]
+  (->> lines
+   (map normalize)
+   (filter palindrome?)))
 
 (defn get-input
   [input-file]
@@ -16,5 +20,5 @@
 
 (defn -main
   [& args]
-  #_(println (reverse (get-input *in*)))
-  (println (palindrome? "asdsa")))
+  (println (filter-palindrome (get-input *in*)))
+  #_(println (palindrome? "asdsa")))

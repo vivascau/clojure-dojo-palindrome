@@ -9,3 +9,7 @@
 (deftest test-palindrome
   (is (true? (palindrome? "abcDcba")))
   (is (false? (palindrome? "abc"))))
+
+(deftest filter-palindrome-test
+  (is (= ["aabaa","adfda"]
+         (filter-palindrome ["Aabaa","sdffg","adFDA"]))))
