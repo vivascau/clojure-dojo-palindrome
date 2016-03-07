@@ -3,4 +3,9 @@
             [clojure-dojo-palindrome.core :refer :all]))
 
 (deftest test-normalize-string
-  (is (= (normalize "ASDfgh123") "asdfgh123")))
+  (is (= (normalize "ASDfgh123") "asdfgh"))
+  (is (= (normalize "aAb1b. c eFG\nh") "aabbcefgh")))
+
+(deftest test-palindrome
+  (is (true? (palindrome? "abcDcba")))
+  (is (false? (palindrome? "abc"))))
