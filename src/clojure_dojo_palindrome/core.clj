@@ -7,12 +7,24 @@
 
 (defn palindrome?
   [s]
-  (= (seq s) (reverse s)))
+  (let [s-norm (normalize s)]
+    (= (seq s-norm) (reverse s-norm))))
 
 (defn filter-palindrome [lines]
   (->> lines
-   (map normalize)
-   (filter palindrome?)))
+       (map normalize)
+       (filter palindrome?)))
+
+(defn get-longer-string [a b]
+  (if (> (count a) (count b))
+    a
+    b))
+
+#_(defn three-longest [current collection]
+  (let [[head & tail] collection]
+    (if (> (count )
+    ))))
+
 
 (defn get-input
   [input-file]
